@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstFragment"
+    >
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_marginBottom="150dp"
+        android:padding="10dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Введите имя"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:background="@android:drawable/edit_text"
+        android:inputType="textPersonName"
+        android:gravity="center"/>
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Введите почту"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:paddingVertical="20dp"
+        android:layout_marginBottom="50dp"
+        android:padding="10dp"
+        android:background="@android:drawable/edit_text"
+        android:inputType="textEmailAddress"
+        android:gravity="center"/>
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Введите пароль"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginBottom="-50dp"
+        android:padding="10dp"
+        android:background="@android:drawable/edit_text"
+        android:inputType="textPassword"
+        android:gravity="center"/>
+
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity = "center_horizontal|bottom"
+        android:text="->"
+        android:layout_marginBottom="150dp"
+        />
+
+</FrameLayout>
