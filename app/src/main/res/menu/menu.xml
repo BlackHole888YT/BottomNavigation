@@ -13,8 +13,8 @@
         />
 
     <item
-        android:id="@+id/thirdFragment"
-        android:title="Settings"
-        android:icon="@drawable/baseline_settings_24"
+        android:id="@+id/notesFragment"
+        android:title="Notes"
+        android:icon="@drawable/baseline_notes_24"
         />
 </menu>
