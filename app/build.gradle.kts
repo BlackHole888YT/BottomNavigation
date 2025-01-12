@@ -42,6 +42,11 @@ android {
 
 dependencies {
     val nav_version = "2.8.4"
+    val lottieVersion = "3.4.0"
+    implementation ("com.airbnb.android:lottie:$lottieVersion")
+
+    implementation ("com.google.android.material:material:1.9.0")
+
 
     implementation ("androidx.navigation:navigation-fragment:$nav_version")
     implementation ("androidx.navigation:navigation-ui:$nav_version")

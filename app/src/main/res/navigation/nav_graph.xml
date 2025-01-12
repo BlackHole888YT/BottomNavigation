@@ -3,44 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/firstFragment">
+    app:startDestination="@id/notesFragment">
 
-    <fragment
-        android:id="@+id/firstFragment"
-        android:name="com.example.bottomnavigation.views.FirstFragment"
-        android:label="fragment_first"
-        tools:layout="@layout/fragment_first" >
-        <action
-            android:id="@+id/action_firstFragment_to_secondFragment"
 
-            app:popUpTo="@menu/menu"
-            app:popUpToInclusive="true"
-
-            app:destination="@id/secondFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/secondFragment"
-        android:name="com.example.bottomnavigation.views.SecondFragment"
-        android:label="fragment_second"
-        tools:layout="@layout/fragment_second" >
-        <argument
-            android:name="getName"
-            app:argType="string"
-            android:defaultValue="Name"
-            />
-
-        <argument
-            android:name="getEmail"
-            app:argType="string"
-            android:defaultValue="E-mail"
-            />
-
-        <argument
-            android:name="getPassword"
-            app:argType="string"
-            android:defaultValue="Password"
-            />
-    </fragment>
     <fragment
         android:id="@+id/notesFragment"
         android:name="com.example.bottomnavigation.views.NotesFragment"
@@ -55,4 +20,18 @@
         android:name="com.example.bottomnavigation.views.WriteNoteFragment"
         android:label="fragment_write_note"
         tools:layout="@layout/fragment_write_note" />
+    <fragment
+        android:id="@+id/onBoardFragment"
+        android:name="com.example.bottomnavigation.views.OnBoardFragment"
+        android:label="fragment_on_board"
+        tools:layout="@layout/fragment_on_board" />
+    <fragment
+        android:id="@+id/pagerItemFragment"
+        android:name="com.example.bottomnavigation.views.PagerItemFragment"
+        android:label="fragment_pager_item"
+        tools:layout="@layout/fragment_pager_item" >
+        <action
+            android:id="@+id/action_pagerItemFragment_to_notesFragment"
+            app:destination="@id/notesFragment" />
+    </fragment>
 </navigation>
