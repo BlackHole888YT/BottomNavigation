@@ -7,18 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.bottomnavigation.App
 import com.example.bottomnavigation.PreferenceHelper
 import com.example.bottomnavigation.adapters.NotesAdapter
+import com.example.bottomnavigation.data.model.NoteEntity
 import com.example.bottomnavigation.databinding.FragmentNotesBinding
-import com.example.bottomnavigation.extension.getBackStackData
-import com.example.bottomnavigation.models.Notes
 
 
 class NotesFragment : Fragment() {
 
+    var isLinear: Boolean = true
     private lateinit var binding: FragmentNotesBinding
-    private lateinit var adapter: NotesAdapter
-    private val notes: ArrayList<Notes> = arrayListOf()
+    private lateinit var adapterA: NotesAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,33 +30,44 @@ class NotesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        getData()
         initialize()
+        getData()
         binding.btnAdd.setOnClickListener{
             findNavController().navigate(NotesFragmentDirections.actionNotesFragmentToWriteNoteFragment())
         }
         val pref = PreferenceHelper()
         pref.unit(requireContext())
-        pref.text?.let { Notes(it, it, 0) }?.let { notes.add(it) }
+
     }
-
-
 
     private fun initialize() {
-        adapter = NotesAdapter(notes)
-        binding.rvNotes.adapter = adapter
-        binding.rvNotes.layoutManager = LinearLayoutManager(requireContext())
+        adapterA = NotesAdapter()
+        binding.rvNotes.apply {
+            adapter = adapterA
+        }
 
-    }
-
-    private fun getData(){
-        getBackStackData<Notes>("DESK"){
-                receivedNote ->
-            //notes.add(receivedNote)
-            adapter.submitList(notes)
+        binding.changeLayout.setOnClickListener {
+            adapterA.apply {
+                if (isLinear){
+                    isLinear = false
+                    binding.rvNotes.layoutManager =
+                        androidx.recyclerview.widget.GridLayoutManager(requireContext(), 2)
+                }else{
+                    isLinear = true
+                    binding.rvNotes.layoutManager =
+                        androidx.recyclerview.widget.LinearLayoutManager(requireContext())
+                }
+            }
         }
 
     }
 
+    private fun getData(){
+        App.appDatabase?.noteDao()?.getAll()?.observe(viewLifecycleOwner){model ->
+            adapterA.submitList(model)
+            adapterA.notifyDataSetChanged()
+        }
+
+    }
 
 }

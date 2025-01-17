@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("androidx.navigation.safeargs.kotlin")
+    id("com.google.devtools.ksp")
+    id("kotlin-kapt")
 }
 
 android {
@@ -41,11 +43,17 @@ android {
 }
 
 dependencies {
+    val room_version = "2.6.1"
     val nav_version = "2.8.4"
     val lottieVersion = "3.4.0"
+
     implementation ("com.airbnb.android:lottie:$lottieVersion")
 
     implementation ("com.google.android.material:material:1.9.0")
+
+    implementation("androidx.room:room-ktx:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+    //ksp("androidx.room:room-compiler:$room_version")
 
 
     implementation ("androidx.navigation:navigation-fragment:$nav_version")
