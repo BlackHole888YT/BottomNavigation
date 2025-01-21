@@ -1,0 +1,20 @@
+<resources>
+
+    <string name="hello_blank_fragment">Салам бош фрагмент</string>
+    <string name="your_notes_are_here">Бардык жазуулар</string>
+    <string name="notes">Жазуулар</string>
+    <string name="skip">Өткөрүү</string>
+    <string name="start">Баштоо</string>
+    <string name="write_name_of_note">Аталышы</string>
+    <string name="write_note">Текст</string>
+    <string name="date_01_01_0001_01_01">Дата: 01.01.0001-01:01</string>
+    <string name="search_notes">Жазууларды издөө</string>
+    <string name="str1_title">Ыңгайлуулук</string>
+    <string name="str1_desc">Эки чыкылдатуу менен жазууларды түзүңүз!\nОй-пикирлерди, идеяларды жана\nмаанилүү тапшырмаларды дароо жазыңыз.</string>
+    <string name="str2_title">Тартипке келтирүү</string>
+    <string name="str2_desc">Жазууларды папкаларга\nжана тэгдерге бөлүңүз.\nКеректүү маалыматты каалаган убакта табыңыз.</string>
+    <string name="str3_title">Синхрондоштуруу</string>
+    <string name="str3_desc">Бардык түзмөктөрдө\nсинхрондоштуруу. Жазууларга\nкаалаган убакта жана жерде кирүү.</string>
+    <string name="error_please_try_again">Ката. Дагы бир жолу аракет кылып көрүңүз</string>
+    <string name="congratulations">Куттуктайм!</string>
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="your_notes_are_here">All notes</string>
+    <string name="notes">Notes</string>
+    <string name="skip">Skip</string>
+    <string name="start">Start</string>
+    <string name="write_name_of_note">Title</string>
+    <string name="write_note">Text</string>
+    <string name="date_01_01_0001_01_01">Date: 01.01.0001-01:01</string>
+    <string name="search_notes">Search notes</string>
+    <string name="str1_title">Convenience</string>
+    <string name="str1_desc">Create notes in two clicks!\nWrite down thoughts, ideas,\nand important tasks instantly.</string>
+    <string name="str2_title">Organization</string>
+    <string name="str2_desc">Organize notes by folders\nand tags. Easily find the\ninformation you need anytime.</string>
+    <string name="str3_title">Synchronization</string>
+    <string name="str3_desc">Synchronization across all\ndevices. Access your notes\nanytime and anywhere.</string>
+    <string name="error_please_try_again">Ошибка. Попробуйте еще раз</string>
+    <string name="congratulations">Поздравляем!</string>
+</resources>

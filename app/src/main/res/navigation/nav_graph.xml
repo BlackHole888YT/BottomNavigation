@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/notesFragment">
+    app:startDestination="@id/signInFragment">
 
 
     <fragment
@@ -32,6 +32,18 @@
         tools:layout="@layout/fragment_pager_item" >
         <action
             android:id="@+id/action_pagerItemFragment_to_notesFragment"
+            app:destination="@id/notesFragment" />
+        <action
+            android:id="@+id/action_pagerItemFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.bottomnavigation.views.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_notesFragment"
             app:destination="@id/notesFragment" />
     </fragment>
 </navigation>

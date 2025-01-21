@@ -1,5 +1,24 @@
 <resources>
-    <string name="app_name">BottomNavigation</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name" translatable="false">BottomNavigation</string>
+
+    <string name="hello_blank_fragment">Привет пустой фрагмент</string>
+    <string name="your_notes_are_here">Все заметки</string>
+    <string name="notes">Заметки</string>
+    <string name="skip">Пропустить</string>
+    <string name="start">Начать</string>
+    <string name="write_name_of_note">Title</string>
+    <string name="write_note">Text</string>
+    <string name="date_01_01_0001_01_01">Дата: 01.01.0001-01:01</string>
+    <string name="search_notes">Поиск заметок</string>
+    <string name="plus" translatable="false">+</string>
+    <string name="Null" translatable="false">null</string>
+    <string name="str1_title">Удобство</string>
+    <string name="str1_desc">Создавайте заметки в два клика!\nЗаписывайте мысли, идеи и\nважные задачи мгновенно.</string>
+    <string name="str2_title">Организация</string>
+    <string name="str2_desc">"Организуйте заметки по папкам\nи тегам. Легко находите нужную\nинформацию в любое время.</string>
+    <string name="str3_title">Синхронизация</string>
+    <string name="str3_desc">Синхронизация на всех\nустройствах. Доступ к записям в\nлюбое время и в любом месте.</string>
+    <string name="default_web_client_id" translatable="false">28501548503-n3t6uhdsao2fmfvorqvu08t4stgu8bpc.apps.googleusercontent.com</string>
+    <string name="error_please_try_again">Error. Please try again</string>
+    <string name="congratulations">Congratulations!</string>
 </resources>

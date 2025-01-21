@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.bottomnavigation.R
 import com.example.bottomnavigation.databinding.FragmentOnBoardBinding
-
-
+/// Экран приветствия (показывается при первом запуске)
 class OnBoardFragment : Fragment() {
 
     private lateinit var binding: FragmentOnBoardBinding
@@ -30,22 +29,19 @@ class OnBoardFragment : Fragment() {
         val onBoardPosition = requireArguments().getInt(ARG_ONBOARD_POSITION)
         when(onBoardPosition){
             0 -> {
-                binding.onboardTvTitle.text = "Удобство"
-                binding.onboardTvDescription.text = "Создавайте заметки в два клика!\nЗаписывайте мысли, идеи и\nважные задачи мгновенно."
+                binding.onboardTvTitle.text = getString(R.string.str1_title)
+                binding.onboardTvDescription.text = getString(R.string.str1_desc)
                 binding.onboardLottieAnim.setAnimation(R.raw.lottie_anim_first)
-
-
             }
             1 -> {
-                binding.onboardTvTitle.text = "Организация"
-                binding.onboardTvDescription.text = "Организуйте заметки по папкам\nи тегам. Легко находите нужную\nинформацию в любое время."
+                binding.onboardTvTitle.text = getString(R.string.str2_title)
+                binding.onboardTvDescription.text = getString(R.string.str2_desc)
                 binding.onboardLottieAnim.setAnimation(R.raw.lottie_anim_second)
             }
             2 -> {
-                binding.onboardTvTitle.text = "Синхронизация"
-                binding.onboardTvDescription.text = "Синхронизация на всех\nустройствах. Доступ к записям в\nлюбое время и в любом месте."
+                binding.onboardTvTitle.text = getString(R.string.str3_title)
+                binding.onboardTvDescription.text = getString(R.string.str3_desc)
                 binding.onboardLottieAnim.setAnimation(R.raw.lottie_anim_third)
-
             }
         }
     }
@@ -53,5 +49,4 @@ class OnBoardFragment : Fragment() {
     companion object{
         const val ARG_ONBOARD_POSITION = "onBoard"
     }
-
 }

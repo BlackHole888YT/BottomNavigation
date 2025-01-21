@@ -5,5 +5,25 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+    <!-- Стиль для кнопки - добавить заметку -->
+    <style name="BH.AddNoteStyle" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MaterialComponents.SmallComponent</item>
+        <item name="elevationOverlayEnabled">false</item>
+        <item name="elevation">0dp</item>
+    </style>
+    <!--  -->
+
+    <!-- Стиль для кнопки - начать -->
+    <style name="BH.StartButtonStyle" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">#FF6C0D</item>
+        <item name="shapeAppearance">@style/RoundedRectangleShape</item>
+    </style>
+    <style name="RoundedRectangleShape" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+    <!--  -->
+
+
     <style name="Theme.BottomNavigation" parent="Base.Theme.BottomNavigation" />
 </resources>
