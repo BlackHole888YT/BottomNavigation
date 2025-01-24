@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.WriteNoteFragment"
+    tools:context=".views.notes.WriteNoteFragment"
     android:background="#E695B0"
     android:backgroundTint="#252525"
     android:fitsSystemWindows="true"

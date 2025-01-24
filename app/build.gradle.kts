@@ -55,6 +55,8 @@ dependencies {
     implementation("androidx.room:room-ktx:$room_version")
     kapt("androidx.room:room-compiler:$room_version")
     //ksp("androidx.room:room-compiler:$room_version")
+    //firestore
+    implementation("com.google.firebase:firebase-firestore")
     //firebase
     implementation(libs.firebase.auth)
     implementation(platform("com.google.firebase:firebase-bom:33.7.0"))

@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.container_view) as NavHostFragment
         navController = navHostFragment.navController
-         val pref = PreferenceHelper()
+        val pref = PreferenceHelper()
         pref.unit(this)
         if (!pref.isOnBoardShow){
             navController.navigate(R.id.pagerItemFragment)

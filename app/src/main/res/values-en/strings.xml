@@ -17,4 +17,10 @@
     <string name="str3_desc">Synchronization across all\ndevices. Access your notes\nanytime and anywhere.</string>
     <string name="error_please_try_again">Ошибка. Попробуйте еще раз</string>
     <string name="congratulations">Поздравляем!</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="duwannadeleteit">Do you want to delete this note?</string>
+    <string name="warning">Warning!</string>
+    <string name="sign_in_as_guest">Sign in as guest</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
 </resources>

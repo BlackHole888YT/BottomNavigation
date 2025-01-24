@@ -21,4 +21,12 @@
     <string name="default_web_client_id" translatable="false">28501548503-n3t6uhdsao2fmfvorqvu08t4stgu8bpc.apps.googleusercontent.com</string>
     <string name="error_please_try_again">Error. Please try again</string>
     <string name="congratulations">Congratulations!</string>
+    <string name="delete">Удалить</string>
+    <string name="cancel">Отмена</string>
+    <string name="duwannadeleteit">Вы хотите удалить эту замтеку?</string>
+    <string name="warning">Предупреждение!</string>
+    <string name="sign_in_as_guest">Войти как гость</string>
+    <string name="sign_in_with_google">Войти через Google</string>
+
+
 </resources>

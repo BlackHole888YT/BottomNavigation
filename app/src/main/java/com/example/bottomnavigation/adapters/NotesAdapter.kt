@@ -13,9 +13,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bottomnavigation.R
 import com.example.bottomnavigation.data.model.NoteEntity
 import com.example.bottomnavigation.databinding.ItemNoteBinding
+import com.example.bottomnavigation.extension.OnItemClick
 import com.google.android.material.transition.Hold
 
-class NotesAdapter: ListAdapter<NoteEntity,NotesAdapter.NotesViewHolder>(DiffCallback()) {
+class NotesAdapter(
+    private val onCustomClick: OnItemClick
+
+): ListAdapter<NoteEntity,NotesAdapter.NotesViewHolder>(DiffCallback()) {
 
     val noteDrawables = listOf(
         R.drawable.item_note_1,
@@ -29,11 +33,9 @@ class NotesAdapter: ListAdapter<NoteEntity,NotesAdapter.NotesViewHolder>(DiffCal
     inner class NotesViewHolder(val binding: ItemNoteBinding) : RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
         fun bind(note: NoteEntity) {
-
             binding.pinkTvDate.text = note.date
             binding.pinkTvDesc.text = note.description
             binding.pinkTvTitle.text = note.title
-
         }
     }
 
@@ -44,10 +46,15 @@ class NotesAdapter: ListAdapter<NoteEntity,NotesAdapter.NotesViewHolder>(DiffCal
 
     override fun onBindViewHolder(holder: NotesViewHolder, position: Int) {
         holder.bind(getItem(position))
-        //val ne: NoteEntity = getItem(position) а оно надо?
         val backgroundIndex = position % noteDrawables.size
         holder.itemView.setBackgroundResource(noteDrawables[backgroundIndex])
-        //holder.bind(ne) а оно надо?
+        holder.itemView.setOnClickListener{
+            onCustomClick.onClick(getItem(position))
+        }
+        holder.itemView.setOnLongClickListener {
+            onCustomClick.onLongClick(getItem(position))
+            true
+        }
     }
 
     class DiffCallback : DiffUtil.ItemCallback<NoteEntity>(){

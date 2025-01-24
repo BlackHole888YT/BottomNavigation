@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/notesFragment"
-        android:name="com.example.bottomnavigation.views.NotesFragment"
+        android:name="com.example.bottomnavigation.views.notes.NotesFragment"
         android:label="fragment_notes"
         tools:layout="@layout/fragment_notes" >
         <action
@@ -17,17 +17,25 @@
     </fragment>
     <fragment
         android:id="@+id/writeNoteFragment"
-        android:name="com.example.bottomnavigation.views.WriteNoteFragment"
+        android:name="com.example.bottomnavigation.views.notes.WriteNoteFragment"
         android:label="fragment_write_note"
-        tools:layout="@layout/fragment_write_note" />
+        tools:layout="@layout/fragment_write_note">
+
+        <argument
+            android:name="note"
+            app:argType="integer"
+            android:defaultValue="0"
+            />
+
+    </fragment>
     <fragment
         android:id="@+id/onBoardFragment"
-        android:name="com.example.bottomnavigation.views.OnBoardFragment"
+        android:name="com.example.bottomnavigation.views.onboard.OnBoardFragment"
         android:label="fragment_on_board"
         tools:layout="@layout/fragment_on_board" />
     <fragment
         android:id="@+id/pagerItemFragment"
-        android:name="com.example.bottomnavigation.views.PagerItemFragment"
+        android:name="com.example.bottomnavigation.views.onboard.PagerItemFragment"
         android:label="fragment_pager_item"
         tools:layout="@layout/fragment_pager_item" >
         <action
@@ -39,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.example.bottomnavigation.views.SignInFragment"
+        android:name="com.example.bottomnavigation.views.signin.SignInFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in" >
         <action

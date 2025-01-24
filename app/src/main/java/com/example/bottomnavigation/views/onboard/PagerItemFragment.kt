@@ -1,4 +1,4 @@
-package com.example.bottomnavigation.views
+package com.example.bottomnavigation.views.onboard
 
 import android.graphics.Color
 import android.os.Bundle
@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.bottomnavigation.PreferenceHelper
-import com.example.bottomnavigation.R
 import com.example.bottomnavigation.adapters.OnBoardAdapter
 import com.example.bottomnavigation.databinding.FragmentPagerItemBinding
 

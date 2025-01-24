@@ -1,4 +1,4 @@
-package com.example.bottomnavigation.views
+package com.example.bottomnavigation.views.onboard
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
