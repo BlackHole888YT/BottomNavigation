@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.bottomnavigation.App
@@ -22,12 +23,13 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.util.Util
 import com.google.firebase.ktx.Firebase
 
-class NotesFragment : Fragment(), OnItemClick {
+class NotesFragment : Fragment(), OnItemClick{
 
     var isLinear: Boolean = true
     private lateinit var binding: FragmentNotesBinding
     private lateinit var adapterA: NotesAdapter
     private var notesList: ArrayList<NoteEntity> = arrayListOf()
+    private var colorId: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,7 +51,7 @@ class NotesFragment : Fragment(), OnItemClick {
     }
 
     private fun initialize() {
-        adapterA = NotesAdapter(this)
+        adapterA = NotesAdapter(this, colorId)
         binding.rvNotes.apply {
             adapter = adapterA
         }
@@ -120,11 +122,11 @@ class NotesFragment : Fragment(), OnItemClick {
         adapterA.submitList(filteredList)
     }
 
-    override fun onClick(noteEntity: NoteEntity) {
+    override fun onClick(noteEntity: NoteEntity, position: Int) {
         findNavController().navigate(NotesFragmentDirections.actionNotesFragmentToWriteNoteFragment(noteEntity.id))
     }
 
-    override fun onLongClick(noteEntity: NoteEntity) {
+    override fun onLongClick(noteEntity: NoteEntity, position: Int) {
         val pref = PreferenceHelper()
         pref.unit(requireContext())
         val builder: AlertDialog.Builder = AlertDialog.Builder(context)
@@ -136,29 +138,35 @@ class NotesFragment : Fragment(), OnItemClick {
                 if (pref.isGuest){
                     App.appDatabase?.noteDao()?.delete(noteEntity)
                 }else{
-                    // Получает айди всех документов, хз как получить айди текщуего на которого нажал
+                    // Получает айди документа, на который нажал
+                    // position - позиция документа, а именно заметки
                     db.collection("notes")
                         .get()
                         .addOnSuccessListener { querySnapshot ->
-                            for (document in querySnapshot) {
-                                val documentId = document.id
-                                Log.d("Firestore", "Document ID: $documentId")
-                                break
+                            for ((index, document) in querySnapshot.withIndex()) {
+                                if (index == position) {
+                                    val docId = document.id
+                                    Log.d("bhF", "Document ID number $position: ${docId}")
+                                    // удаление документа
+                                    db.collection("notes").document(docId)
+                                        .delete()
+                                        .addOnSuccessListener {
+                                            Toast.makeText(requireContext(), "DocumentSnapshot with id: $docId successfully deleted!", Toast.LENGTH_SHORT).show()
+                                            Log.d(TAG_FIRESTORE, "DocumentSnapshot with id: $docId successfully deleted!")
+                                        }
+                                        .addOnFailureListener {
+                                            e -> Log.w(TAG_FIRESTORE, "Error deleting document with id: $docId", e)
+                                            Toast.makeText(requireContext(), "Error deleting document with id: $docId", Toast.LENGTH_SHORT).show()
+                                        }
+                                    // удаление документа
+                                    // удаление заметки есть, но список заметок остается не изменным до перезапуска приложения
+
+                                }
                             }
+
                         }
                         .addOnFailureListener { exception ->
-                            Log.w("Firestore", "Error getting documents", exception)
-                        }
-
-                    // Тут надо написать айди документа, который хочешь удалить
-                    db.collection("notes").document()
-                        .delete()
-                        .addOnSuccessListener {
-                            Log.d(TAG, "DocumentSnapshot successfully deleted!")
-                        }
-                        .addOnFailureListener {
-                            e -> Log.w(TAG, "Error deleting document", e)
-
+                            Log.w("TAG_FIRESTORE", "Error getting documents", exception)
                         }
                 }
             }
@@ -172,5 +180,6 @@ class NotesFragment : Fragment(), OnItemClick {
 
     companion object{
         const val TAG = "bh"
+        const val TAG_FIRESTORE = "bhf"
     }
 }

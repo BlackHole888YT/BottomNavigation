@@ -23,4 +23,12 @@
     <string name="warning">Warning!</string>
     <string name="sign_in_as_guest">Sign in as guest</string>
     <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="authorize">Authorization</string>
+    <string name="done">Done</string>
+    <string name="set_light_blue_color">Set light blue color</string>
+    <string name="set_green_color">Set green color</string>
+    <string name="set_orange_color">Set orange color</string>
+    <string name="set_purple_color">Set purple color</string>
+    <string name="set_red_color">Set red color</string>
+    <string name="set_yellow_color">Set yellow color</string>
 </resources>

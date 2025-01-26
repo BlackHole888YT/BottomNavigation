@@ -27,6 +27,16 @@
     <string name="warning">Предупреждение!</string>
     <string name="sign_in_as_guest">Войти как гость</string>
     <string name="sign_in_with_google">Войти через Google</string>
+    <string name="authorize">Авторизация</string>
+    <string name="todo" translatable="false">TODO</string>
+    <string name="done">Готово</string>
+    <string name="change_color">Поменять цвет</string>
+    <string name="set_light_blue_color">Установить светло-голубой цвет</string>
+    <string name="set_green_color">Установить зеленый цвет</string>
+    <string name="set_orange_color">Установить оранжевый цвет</string>
+    <string name="set_purple_color">Установить фиолетовый цвет</string>
+    <string name="set_red_color">Установить красный цвет</string>
+    <string name="set_yellow_color">Установить желтый цвет</string>
 
 
 </resources>
