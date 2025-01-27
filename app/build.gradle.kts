@@ -44,6 +44,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.firebase.messaging)
     val room_version = "2.6.1"
     val nav_version = "2.8.4"
     val lottieVersion = "3.4.0"
