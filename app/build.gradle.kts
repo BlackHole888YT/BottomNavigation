@@ -3,8 +3,9 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.devtools.ksp")
-    id("kotlin-kapt")
     alias(libs.plugins.google.gms.google.services)
+    // Add the Crashlytics Gradle plugin
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -54,14 +55,18 @@ dependencies {
     implementation ("com.google.android.material:material:1.9.0")
     //room
     implementation("androidx.room:room-ktx:$room_version")
-    kapt("androidx.room:room-compiler:$room_version")
+    ksp("androidx.room:room-compiler:$room_version")
     //ksp("androidx.room:room-compiler:$room_version")
     //firestore
     implementation("com.google.firebase:firebase-firestore")
     //firebase
     implementation(libs.firebase.auth)
-    implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
+    implementation(platform("com.google.firebase:firebase-bom:33.8.0"))
     implementation("com.google.android.gms:play-services-auth:21.3.0")
+    //Firebase Crashlytics
+    implementation("com.google.firebase:firebase-crashlytics")
+    //Firebase Analytics
+    implementation("com.google.firebase:firebase-analytics")
     //navigation
     implementation ("androidx.navigation:navigation-fragment:$nav_version")
     implementation ("androidx.navigation:navigation-ui:$nav_version")

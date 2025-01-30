@@ -55,6 +55,12 @@ class NotesFragment : Fragment(), OnItemClick{
         binding.rvNotes.apply {
             adapter = adapterA
         }
+
+        binding.btnCrash.setOnClickListener {
+            throw RuntimeException("Test Crash") // Force a crash
+
+        }
+
         binding.changeLayout.setOnClickListener {
             adapterA.apply {
                 if (isLinear){

@@ -10,6 +10,9 @@ buildscript{
 }
 
 plugins {
+    // Add the dependency for the Crashlytics Gradle plugin
+    id("com.google.firebase.crashlytics") version "3.0.2" apply false
+
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
     id("androidx.navigation.safeargs.kotlin") version "2.5.3" apply false

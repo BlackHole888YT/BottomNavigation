@@ -20,6 +20,16 @@
         app:layout_constraintBottom_toTopOf="@id/search_bar"
         />
 
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/btn_crash"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/error"
+        app:layout_constraintBottom_toTopOf="@+id/search_bar"
+        app:layout_constraintEnd_toStartOf="@+id/editText"
+        app:layout_constraintStart_toEndOf="@+id/menu_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/editText"
         android:textColor="@color/white"
